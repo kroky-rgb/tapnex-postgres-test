@@ -1,0 +1,441 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 220 26% 14%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+
+  /* Professional elegant background patterns */
+  .professional-bg {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #6366f1 50%, #8b5cf6 75%, #a855f7 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .professional-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+    animation: backgroundShift 25s ease-in-out infinite;
+  }
+
+  @keyframes backgroundShift {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    33% {
+      transform: translateX(-15px) translateY(-15px) rotate(0.5deg);
+    }
+    66% {
+      transform: translateX(15px) translateY(15px) rotate(-0.5deg);
+    }
+  }
+
+  /* Elegant floating shapes */
+  .floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .shape {
+    position: absolute;
+    opacity: 0.06;
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .shape:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #3b82f6, #6366f1);
+    border-radius: 50%;
+    animation-delay: 0s;
+  }
+
+  .shape:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    border-radius: 30%;
+    animation-delay: 7s;
+  }
+
+  .shape:nth-child(3) {
+    bottom: 25%;
+    left: 20%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation-delay: 14s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(60deg);
+    }
+    66% {
+      transform: translateY(20px) rotate(120deg);
+    }
+  }
+
+  /* Professional gradient backgrounds */
+  .gradient-elegant {
+    background: #dadee1;
+  }
+
+  .gradient-sophisticated {
+    background: #dadee1;
+  }
+
+  .gradient-modern {
+    background: #dadee1;
+  }
+
+  /* Clean section backgrounds */
+  .section-light {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  }
+
+  .section-neutral {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  }
+
+  .section-accent {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+  }
+
+  /* Glass morphism effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  }
+
+  /* Professional card hover effects */
+  .card-professional {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .card-professional::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s;
+  }
+
+  .card-professional:hover::before {
+    left: 100%;
+  }
+
+  .card-professional:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Elegant gradient text */
+  .gradient-text-elegant {
+    background: linear-gradient(-45deg, #1e40af, #3b82f6, #6366f1, #8b5cf6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Professional pulse animation */
+  .pulse-elegant {
+    animation: pulseElegant 4s infinite;
+  }
+
+  @keyframes pulseElegant {
+    0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+  }
+
+  /* Sophisticated loading animation */
+  .loading-elegant {
+    background: linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.1) 25%,
+      rgba(99, 102, 241, 0.15) 50%,
+      rgba(59, 130, 246, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: elegantShimmer 2.5s infinite;
+  }
+
+  @keyframes elegantShimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Professional section dividers */
+  .section-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #6366f1, #8b5cf6, transparent);
+    margin: 3rem 0;
+  }
+
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    border-radius: 2px;
+  }
+
+  /* Clean background patterns */
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 25px 25px;
+  }
+
+  .pattern-grid {
+    background-image: linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Professional button effects */
+  .btn-professional {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    transition: all 0.3s ease;
+  }
+
+  .btn-professional::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-professional:hover::before {
+    left: 100%;
+  }
+
+  .btn-professional:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+  }
+
+  /* Smooth scroll animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Professional focus states */
+  .focus-professional {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    --focus-ring-color: rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #6366f1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #5b21b6);
+}
+
+/* Professional text selection */
+::selection {
+  background: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .floating-shapes .shape,
+  .gradient-text-elegant,
+  .pulse-elegant,
+  .loading-elegant {
+    animation: none;
+  }
+
+  .card-professional,
+  .btn-professional,
+  .scroll-reveal {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid currentColor;
+  }
+}
+
+/* Print styles */
+@media print {
+  .floating-shapes,
+  .professional-bg::before {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .floating-shapes .shape {
+    display: none;
+  }
+
+  .professional-bg::before {
+    animation-duration: 35s;
+  }
+}
